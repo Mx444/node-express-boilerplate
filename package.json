@@ -1,8 +1,6 @@
 {
   "name": "express-boilerplate",
   "version": "1.0.0",
-  "main": "server.ts",
-  "type": "module",
   "scripts": {
     "build": "tsc --noEmit && tsc --outDir build",
     "dev": "node build/server.js",
