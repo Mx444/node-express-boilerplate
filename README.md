@@ -1,122 +1,98 @@
-# Express Boilerplate
+# Node Express Boilerplate
 
-Questa è una boilerplate per un progetto Node.js con Express e TypeScript. Include configurazioni per lo sviluppo continuo usando Nodemon e la compilazione TypeScript.
+This repository contains a boilerplate for building Node.js applications with Express. The project provides a minimal setup to get started with Express and TypeScript.
 
-## Struttura del Progetto
+## Repository Structure
 
-```markdown
-/your-project
-/src
-server.ts
-/build
-(file generati dopo la compilazione)
-package.json
-tsconfig.json
-README.md
-```
+The repository is organized as follows:
 
-## Prerequisiti
+- **src/**: Source code directory
+  - **server.ts**: Main server file with Express configuration
+  - **utils/**: Utility functions
+    - **handleError.ts**: Error handling utility
 
-- Node.js (versione LTS raccomandata)
-- npm (o yarn)
+- **.gitignore**: Git ignore file
+- **nodemon.json**: Nodemon configuration for development
+- **package.json**: Project dependencies and scripts
+- **tsconfig.json**: TypeScript configuration
 
-## Installazione
+## Features
 
-1. Clona il repository.
-2. Installa le dipendenze.
+The Node Express Boilerplate offers the following features:
 
-```bash
-git clone <url-del-tuo-repository>
-cd your-project
-npm install
-```
+- **TypeScript Integration**
+  - Full TypeScript support
+  - Type-safe Express application
 
-## Script NPM
+- **Express Server**
+  - Pre-configured Express server
+  - Basic routing setup
 
-### `npm run build`
+- **Error Handling**
+  - Centralized error handling utility
+  - Consistent error responses
 
-Compila i file TypeScript nella directory `build`.
+- **Development Tools**
+  - Nodemon for automatic server restart during development
+  - Environment variable support with dotenv
 
-### `npm run dev`
+## How to Use
 
-Avvia l'applicazione in modalità sviluppo usando Nodemon. Rileva modifiche nei file TypeScript nella directory `src` e riavvia automaticamente il server.
+1. **Installation**:
+   ```bash
+   npm install
+   ```
 
-### `npm run start`
+2. **Running the Server**:
+   - Development mode:
+     ```bash
+     npm run dev
+     ```
+   - Production mode:
+     ```bash
+     npm run build
+     npm start
+     ```
 
-Avvia l'applicazione dal file compilato `build/server.js`.
+3. **Environment Variables**:
+   - Create a `.env` file in the root directory
+   - Define your environment variables (e.g., `PORT=3000`)
 
-## Configurazione TypeScript
+## API Endpoints
 
-Assicurati che il tuo `tsconfig.json` sia configurato correttamente:
+- **GET /** - Returns a "Hello, world!" message
 
-```json
-{
-  "compilerOptions": {
-    "target": "ES6",
-    "module": "ESNext",
-    "lib": ["DOM", "ES6", "DOM.Iterable", "ScriptHost"],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": false,
-    "jsx": "react-jsx",
-    "baseUrl": "./",
-    "paths": {
-      "@/": ["src/"]
-    },
-    "outDir": "./build",
-    "rootDir": "./src"
-  },
-  "include": ["src//"],
-  "exclude": ["node_modules", "build"]
-}
-```
+## Technical Implementation
 
-## Variabili d'Ambiente
+The application is built using:
+- Node.js for the runtime environment
+- Express.js for the web framework
+- TypeScript for type safety
+- dotenv for environment variable management
 
-Per gestire le variabili d'ambiente, utilizza il pacchetto `dotenv`. Crea un file `.env` nella root del progetto. Ad esempio:
+## Requirements
 
-```markdown
-PORT=3000
-```
+- Node.js (v14 or higher recommended)
+- npm or yarn package manager
 
-Puoi accedere a queste variabili nel tuo codice usando `process.env`.
+## Getting Started
 
-## Esempio di Codice
+To use this boilerplate:
 
-Ecco un esempio di `src/server.ts`:
+1. Clone this repository
+2. Install dependencies with `npm install`
+3. Start the development server with `npm run dev`
+4. Access the server at `http://localhost:3000`
 
-```typescript
-import express from "express";
+## Extending the Boilerplate
 
-const app = express();
-const PORT = process.env.PORT || 3000;
+This boilerplate is designed to be minimal and extensible. Here are some suggestions for extending it:
 
-app.get("/", (req, res) => {
-  res.send("Hello, world!");
-});
+- Add middleware for authentication, logging, etc.
+- Implement a database connection (MongoDB, PostgreSQL, etc.)
+- Create additional routes and controllers
+- Add testing with Jest or Mocha
 
-app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
-});
-```
+---
 
-## Contributi
-
-Si accettano contributi! Sentiti libero di fare il fork del repository e creare una pull request.
-
-## Licenza
-
-Questo progetto è distribuito sotto la licenza ISC.
-
-## Istruzioni
-
-1. Sostituisci `<url-del-tuo-repository>` con l'URL reale del tuo repository.
-2. Aggiungi le variabili d'ambiente necessarie nel file `.env`.
-3. Personalizza le informazioni come il nome dell'autore e i dettagli della licenza se necessario.
+*This boilerplate provides a solid foundation for building robust Node.js applications with Express and TypeScript.*
